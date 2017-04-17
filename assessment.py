@@ -118,6 +118,10 @@ class Quiz(Exam):
         else:
             return 0
 
+    def __repr__(self):
+        num_q = len(self.questions)
+        return '{name} has {num_q} questions'.format(name=self.name, num_q)
+
 
 class StudentExam(object):
     """Stores student, exam and score information"""
@@ -145,6 +149,9 @@ class StudentQuiz(StudentExam):
     def take_test(self):
         """calls take test from parent, score depends on exam type passed"""
         super(StudentQuiz, self).take_test()
+
+    def __repr__(self):
+        return "Subclass of StudentExam. Is pass/fail"
 
 
 def example():
